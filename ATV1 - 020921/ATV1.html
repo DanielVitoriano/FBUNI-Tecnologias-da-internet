@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATV1</title>
+    <script type="text/javascript" src="ATV1.js"></script>
+</head>
+<body>
+    <h2>QUESTÂO 1</h2>
+    <div>
+        Value1: <input type="text" id="value1" size="2"> <br>
+        Value2: <input type="text" id="value2" size="2"> <br>
+
+        Operator: 
+        <select name="operation" id="operator" size="1" onchange="calculate()">
+            <option value="op0"> </option>
+            <option value="op1">+</option>
+            <option value="op2">-</option>
+            <option value="op3">*</option>
+            <option value="op4">/</option>
+        </select>
+    </div>
+    <h2>QUESTÂO 3</h2>
+    <div>
+        <table border="4" onkeypress="">
+            <tr>
+                <th colspan="4"><input type="text" id="values" readonly></th>
+            </tr>
+
+            <tr>
+                <th><button id="7" value="7" onclick="insert('7')">7</button></th> 
+                <th><button id="8" value="8" onclick="insert('8')">8</button></th> 
+                <th><button id="9" value="9" onclick="insert('9')">9</button></th> 
+                <th><button onclick="insert('+')">+</button></th>
+            </tr> 
+
+            <tr>
+                <th><button id="4" value="4" onclick="insert('4')">4</button></th>
+                <th><button id="5" value="5" onclick="insert('5')">5</button></th> 
+                <th><button id="6" value="6" onclick="insert('6')">6</button></th> 
+                <th><button onclick="insert('-')">-</button></th>
+            </tr> 
+
+            <tr>
+                <th><button id="1" value="1" onclick="insert('1')">1</button></th> 
+                <th><button id="2" value="2" onclick="insert('2')">2</button></th> 
+                <th><button id="3" value="3" onclick="insert('3')">3</button></th> 
+                <th><button id="*" value="*" onclick="insert('*')">*</button></th>
+            </tr> 
+
+            <tr>
+                <th><button id="0" value="0" onclick="insert('0')">0</button></th> 
+                <th colspan="2"><button id="h" value="h" onclick="Historic()">Historic</button></th> 
+                <th><button id="/" value="/" onclick="insert('/')">/</button></th>
+            </tr> 
+            <tr>
+                <th><button id="/" value="/" onclick="clean()">C</button>
+                    <th colspan="2"><button id="equals" value="=" onclick="result()">=</button></th> 
+                <th colspan="1"><input type="text" id="result" readonly size="4"></th>
+            </tr>
+            </table>
+    </div>
+</body>
+</html>

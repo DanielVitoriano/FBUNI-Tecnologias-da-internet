@@ -16,7 +16,9 @@
 
         </div>
         <div class="father" id="div_add")>
-            <script> hidden('div_add')</script>
+            <script> 
+                hidden('div_add');
+            </script>
             <h3>CADASTRO</h3>
             <form action="javascript: include_in_students()" id="form">
                 <div class="form-container">
@@ -29,18 +31,18 @@
                     <span class="input-label">D. Matrícula:</span><input type="date" id="reg_reg_date" class="input" required>
                     <hr>
                 </div>
-                <div>
+                <div id="modality">
                     <input type="radio" id="reg_modality1" name="reg_modality">
-                    <label for="reg_modality1">Bolsista</label>
+                    <label id='label_modality1' for="reg_modality1" valor="Bolsista">Bolsista</label>
     
                     <input type="radio" id="reg_modality2" name="reg_modality">
-                    <label for="reg_modality2">ProUni</label>
+                    <label id='label_modality2' for="reg_modality2" valor="ProUni">ProUni</label>
                     
                     <input type="radio" id="reg_modality3" name="reg_modality">
-                    <label for="reg_modality3">FIES</label>
+                    <label id='label_modality3' for="reg_modality3" valor="FIES">FIES</label>
     
                     <input type="radio" id="reg_modality4" name="reg_modality">
-                    <label for="reg_modality4">Particular</label>
+                    <label id='label_modality4' for="reg_modality4" valor="Particular">Particular</label>
                     <br>
                     <hr>
                 </div>
@@ -59,19 +61,23 @@
                     <label for="chair_2" id="chair_2l" name="chair">CADEIRA 2</label>
                 </div>
                 <div >
-                    <button class="input_button"><img src="img/icone-mais.png" alt="" width="20" height="20"></button>
+                    <button class="input_button" mod='1' id="button_form1"><img src="img/icone-mais.png" alt="" width="20" height="20" ></button>
                 </div> 
             </form>
             <br>
             
         </div>
         <div class="father" id="div_list">
-            <script> hidden('div_list')</script>
+            <script> 
+                hidden('div_list');
+            </script>
             <h3>ESTUDANTES CADASTRADOS</h3>
             <div>
                 <form action="javascript: find_reg('search_reg')">
                     <span class="input-label">Matrícula:</span><input type="number" id="search_reg" class="input" required> <br>
-                    <button type="submit" class="input_button"><img src="img/search-131964753234672616.png" alt="" width="20" height="20"></button> <br>
+                    <button type="submit" class="input_button"><img src="img/search-131964753234672616.png" alt="PESQUISAR" width="20" height="20"></button>
+                    <button type="button" onclick="show_students_list(null, null, 'show_students_body')" class="input_button"><img src="img/png-transparent-icon-icons-matt-refresh-symbol-view-thumbnail.png" alt="ATUALIZAR" width="20" height="20"></button> <br>
+                    <hr>
                 </form>
             </div>
             <div id="students">

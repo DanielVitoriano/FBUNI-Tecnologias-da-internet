@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATV2 V1</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script type="text/javascript" src="atv2_v1.js"></script>
+</head>
+<body>
+    <main>
+        <div class="options">
+            <button onclick="on_cad_click('div_add')" class="button_options"><b>CADASTRAR ALUNO</b></button> <br>
+            <button onclick="on_list_click('div_list')" class="button_options"><b>LISTA DE ALUNOS</b> </button> <br>
+
+        </div>
+        <div class="father" id="div_add")>
+            <script> hidden('div_add')</script>
+            <h3>CADASTRO</h3>
+            <form action="javascript: include_in_students()" id="form">
+                <div class="form-container">
+                    <span class="input-label">Nome:</span></span><input type="text" id="reg_name" size="50" class="input" required><br>
+    
+                    <span class="input-label">Matrícula:</span><input type="number" id="reg_reg" class="input" required> <br>
+    
+                    <span class="input-label">Nascimento:</span><input type="date" id="reg_date" class="input" required><br>
+    
+                    <span class="input-label">D. Matrícula:</span><input type="date" id="reg_reg_date" class="input" required>
+                    <hr>
+                </div>
+                <div>
+                    <input type="radio" id="reg_modality1" name="reg_modality">
+                    <label for="reg_modality1">Bolsista</label>
+    
+                    <input type="radio" id="reg_modality2" name="reg_modality">
+                    <label for="reg_modality2">ProUni</label>
+                    
+                    <input type="radio" id="reg_modality3" name="reg_modality">
+                    <label for="reg_modality3">FIES</label>
+    
+                    <input type="radio" id="reg_modality4" name="reg_modality">
+                    <label for="reg_modality4">Particular</label>
+                    <br>
+                    <hr>
+                </div>
+                <div>
+                    <select name="courses" id="select_courses" onchange="chairs_opt()" required>
+                        <option selected disabled hidden>CURSO</option>
+                        <option value="0">Ciências da Computação</option>
+                        <option value="1">Jogos Digitais</option>
+                    </select> <br>
+                </div>
+                
+                <div id="checkboxes_chairs">
+                    <input type="checkbox" id="chair_1" name="chair">
+                    <label for="chair_1" id="chair_1l">CADEIRA 1</label>
+                    <input type="checkbox" id="chair_2">
+                    <label for="chair_2" id="chair_2l" name="chair">CADEIRA 2</label>
+                </div>
+                <div >
+                    <button class="input_button"><img src="img/icone-mais.png" alt="" width="20" height="20"></button>
+                </div> 
+            </form>
+            <br>
+            
+        </div>
+        <div class="father" id="div_list">
+            <script> hidden('div_list')</script>
+            <h3>ESTUDANTES CADASTRADOS</h3>
+            <div>
+                <form action="javascript: find_reg('search_reg')">
+                    <span class="input-label">Matrícula:</span><input type="number" id="search_reg" class="input" required> <br>
+                    <button type="submit" class="input_button"><img src="img/search-131964753234672616.png" alt="" width="20" height="20"></button> <br>
+                </form>
+            </div>
+            <div id="students">
+                <table>
+                    <thead id="head" >
+                        <th id="left">Nome</th>
+                        <th id="left">Matricula</th>
+                    </thead>
+                    <tbody id="show_students_body">
+                    
+                    </tbody>
+                </table>
+                <p><br></p>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

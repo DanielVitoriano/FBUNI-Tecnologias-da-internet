@@ -1,6 +1,6 @@
 
 main {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     width: 720px;
     margin: auto;
     padding: 10px;
@@ -29,7 +29,7 @@ table {
   }
 
 table{
-    background-color: rgb(93, 93, 224);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
 }
 tr#escuro{
@@ -43,7 +43,7 @@ tr#claro{
     border-radius: 10px;
 }
 .father{
-    background-color: rgb(165, 186, 245);
+    background-color: rgb(181, 208, 247);
     width: 720px;
     margin: auto;
     padding: 0px;
@@ -57,7 +57,7 @@ div#students{
     margin-right: 10%;
 }
 body{
-    background-color: rgb(21, 137, 245);
+    background-color: rgb(12, 71, 138);
 }
 h3{
     text-align: center;
@@ -126,7 +126,7 @@ input{
     box-shadow: 0 0 40px 40px white inset;
   }
 .options{
-    background-color: rgb(165, 186, 245);
+    background-color: rgba(12, 71, 138, 0.705);
     width: auto;
     height: auto;
     margin: auto;

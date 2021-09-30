@@ -5,12 +5,18 @@ main {
     margin: auto;
     padding: 10px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.74);
-    border-radius: 1%;
+    border-radius: 10px;
 }
 
 * {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+}
+h1{
+  text-align: left;
+  color: white;
+  font-size: 26px;
+
 }
 img:hover{
   opacity: 0.3;
@@ -35,15 +41,13 @@ table{
 tr#escuro{
   border-radius: 10px;
     background-color: rgb(140, 166, 240);
-    border-radius: 10px;
 }
 tr#claro{
   border-radius: 10px;
     background-color: aliceblue;
-    border-radius: 10px;
 }
 .father{
-    background-color: rgb(181, 208, 247);
+    background-color: rgba(208, 221, 230, 100);
     width: 720px;
     margin: auto;
     padding: 0px;
@@ -57,7 +61,7 @@ div#students{
     margin-right: 10%;
 }
 body{
-    background-color: rgb(12, 71, 138);
+    background-color: rgb(96, 134, 238);
 }
 h3{
     text-align: center;
@@ -94,10 +98,11 @@ input{
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
-    background-color: transparent;
+    /*background-color: white; */
+    background-image: linear-gradient(rgba(4, 4, 177, 0.171), white);
     border: 2px solid black;
     border-radius: 0.6em;
-    color: white;
+    color: black;
     cursor: pointer;
 
     -webkit-align-self: center;
@@ -115,7 +120,7 @@ input{
     font-weight: 700;
   }
 .button_options:hover, .btn:focus {
-    color: black;
+    color: white;
     outline: 0;
   }
 .button_options {
@@ -123,15 +128,15 @@ input{
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   }
 .button_options:hover {
-    box-shadow: 0 0 40px 40px white inset;
+    box-shadow: 0 0 40px 40px rgba(4, 4, 177, 0.171) inset;
   }
 .options{
-    background-color: rgba(12, 71, 138, 0.705);
+    background-color: rgba(41, 73, 124, 100);
     width: auto;
     height: auto;
     margin: auto;
     padding: 5px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.74);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.774);
     border-radius: 10px;
     text-align: center;
 }

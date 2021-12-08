@@ -1,0 +1,98 @@
+<div class="shop_content">
+    <div class="shop_bar clearfix">
+        <div class="shop_product_count"><span>{{produtosService.getQtdProdutos()}}</span> Produtos encontrados</div>
+        <div class="shop_sorting">
+            <span>Sort by:</span>
+            <ul>
+                <li>
+                    <span class="sorting_text">Em alta<i class="fas fa-chevron-down"></i></span>
+                    <ul>
+                        <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "original-order" }'>Em alta</li>
+                        <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>Nome</li>
+                        <li class="shop_sorting_button"data-isotope-option='{ "sortBy": "price" }'>Preco</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="product_grid">
+        <div class="product_grid_border"></div>
+
+        <!-- Product Item -->
+        <div class="product_item is_new" *ngFor="let produto of produtosService.getProdutos();  let i = index" [attr.data-index]="i">
+            <div class="product_border"></div>
+            <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{produto.src}}" alt=""></div>
+            <div class="product_content">
+                <div class="product_price">{{produto.preco | currency: 'BRL'}}</div>
+                <div class="product_name"><div><a href="#" tabindex="0">{{produto.nome}}</a></div></div>
+            </div>
+            <div class="product_fav"><i class="fas fa-heart"></i></div>
+            
+            <ul class="product_marks">
+                <li class="product_mark product_discount">-25%</li>
+                <li class="product_mark product_new">Novo</li>
+            </ul>
+
+            <div class="product_edit" (click)="pegarProduto(produto.nome); clickModal()">
+                <li class="product_mark product_new">EDIT</li>
+            </div>
+            
+            
+        </div>
+        <div *ngIf="modal"><!--SE FOR VERDADEIRO EXIBIR MODAL-->
+            <!-- Modal -->
+            <div class="modal-dialog modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Editar Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="clickModal()"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="input-group">
+                            <span class="input-group-text">Nome:</span>
+                            <input type="text" aria-label="First name" class="form-control" [(ngModel)]="nome">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">R$</span>
+                            <input type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" [(ngModel)]="preco">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div><p>Link da imagem</p></div>
+                        <div class="input-group mb-3">
+                            <input type="url" class="form-control" id="inputGroupFile02" [(ngModel)]="src">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="excluirProduto(); clickModal()" style="background-color: red;">EXCLUIR</button>
+                    <button type="button" class="btn btn-primary" (click)="editarProduto(); clickModal()">Salvar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!modal"> <!--SE FOR FALSA NÃO CRIA MODAL-->
+            <p></p>
+        </div>
+    </div>
+
+    <!-- Shop Page Navigation -->
+
+    <!-- <div class="shop_page_nav d-flex flex-row">
+        <div class="page_prev d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
+        <ul class="page_nav d-flex flex-row">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">21</a></li>
+        </ul>
+        <div class="page_next d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-right"></i></div>
+    </div> -->
+
+</div>
